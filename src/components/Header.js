@@ -16,8 +16,8 @@ function Header() {
 
             <Nav>
                 <Dropdown alignRight>
-                    <Dropdown.Toggle variant='success'>
-                        <FaShoppingCart color="white" fontSize="25px" />
+                    <Dropdown.Toggle variant='success' data-testid='cart-toggle'>
+                        <FaShoppingCart color="white" fontSize="25px" className='shoppingCart' data-testid='cart-icon' />
                         <Badge>{10}</Badge>
                     </Dropdown.Toggle>
 
