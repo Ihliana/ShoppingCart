@@ -1,9 +1,11 @@
-import React, {createContext} from 'react'
+import React, {createContext, useReducer} from 'react'
 import {faker} from '@faker-js/faker';
+
+import { cartReducer } from './Reducers';
 
 const Cart = createContext()
 
-export const Context = ({children}) => {
+const Context = ({children}) => {
 
     const products = [...Array(20)].map(() => ({
         id: faker.string.uuid(),
@@ -15,9 +17,15 @@ export const Context = ({children}) => {
         ratings: faker.helpers.arrayElement([1,2,3,4,5])
       }));
 
-      console.log(products)
+
+      const [state, dispatch] = useReducer(cartReducer, {
+        products: products, 
+        cart: []
+      })
+
+
   return (
-        <Cart.Provider>
+        <Cart.Provider value={{state, dispatch}}>
                 {children}
         </Cart.Provider>
 
@@ -26,3 +34,7 @@ export const Context = ({children}) => {
 }
 
 export default Context
+
+export const CartState = () => {
+  return React.useContext(Cart)
+}
