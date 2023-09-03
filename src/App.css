@@ -20,3 +20,24 @@ a {
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
+/* Filters */
+
+.filters {
+    background-color: #343a40;
+    color: #fff;
+    padding: 1.25em;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin: 0.8em;
+    height: 86vh;
+}
+
+.filters > span {
+    padding-bottom: 1.25em;
+}
+
+.title {
+    font-size: 2em;
+}
