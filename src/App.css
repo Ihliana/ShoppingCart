@@ -1,3 +1,8 @@
+:root {
+    --main-color:#343a40;
+}
+
+
 a {
     text-decoration: none !important;
     color: inherit !important;
@@ -24,7 +29,7 @@ a {
 /* Filters */
 
 .filters {
-    background-color: #343a40;
+    background-color: var(--main-color);
     color: #fff;
     padding: 1.25em;
     display: flex;
@@ -41,3 +46,12 @@ a {
 .title {
     font-size: 2em;
 }
+
+
+/* Product */
+
+.products {
+    width: 30%;
+    margin: 10px;
+    border: 1px solid var(--main-color);
+  }
