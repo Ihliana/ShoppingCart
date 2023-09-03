@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Button, Form} from "react-bootstrap";
+import Rating from './Rating';
 
 /**
  * A React component for filtering and sorting products.
@@ -9,6 +10,11 @@ import { Button, Form} from "react-bootstrap";
  */
 
 function Filters() {
+
+  const [rate, setRate] = React.useState(3)
+
+
+
   return (
     <div className='filters'>
 
@@ -52,7 +58,9 @@ function Filters() {
          {/* Rating Filter */}
         <span>
             <label style={{paddingRight: 10}}>Rating:</label>
-            <Rating rating={byRating} style={{cursor: 'pointer'}} />
+            <Rating rating={rate}
+                    onClick={(idx) => setRate(idx + 1)}
+                   style={{cursor: 'pointer'}} />
         </span>
 
          {/* Clear Filters Button */}
