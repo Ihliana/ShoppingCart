@@ -23,9 +23,9 @@ function Rating({rating, onClick, style}) {
             <span key={idx} onClick={() => onClick(idx)} style={style}>
                 {
                     rating > idx ? (
-                        <AiFillStar fontSize="1em" />
-                    ) : (
-                        <AiOutlineStar fontSize="1em" />
+                        <AiFillStar fontSize="1em" data-testid="filled" />
+                    ) : ( 
+                        <AiOutlineStar fontSize="1em" data-testid="outline" />
                     )
                 }
             </span>
