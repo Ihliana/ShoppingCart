@@ -40,7 +40,13 @@ function Cart() {
                     </Col>
 
                     <Col md={2}>
-                      <Form.Control as="select" value={product.qty}>
+                      <Form.Control as="select" 
+                                    value={product.qty}
+                                    onChange = {
+                                      (e) => dispatch({ type: "CHANGE_CART_QTY", payload: {id: product.id, qty: e.target.value}})
+                                    }
+                      
+                      >
                         {
                           [...Array(product.inStock).keys()].map((x) => (
                             <option key={x + 1}>{x + 1}</option>
