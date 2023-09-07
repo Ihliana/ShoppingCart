@@ -5,9 +5,18 @@ import { FaShoppingCart } from "react-icons/fa";
 import {Link} from "react-router-dom"
 import { CartState } from '../context/Context';
 import { AiFillDelete } from 'react-icons/ai';
+/**
+ * 
+ * Header component for the e-commerce website, displaying the navigation bar with cart information
+ * 
+ * @component Header
+ * @returns {JSX.Element} The rendered Header component
+ */
+
 
 function Header() {
 
+    //Retrieve cart state and dispatch function from the context
     const {state: {cart}, dispatch} = CartState()
 
 

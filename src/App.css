@@ -80,3 +80,7 @@ a {
     padding: 0 1.25rem;
     flex-direction: column;
   }
+
+  .summary {
+    width: 30%;
+  }
