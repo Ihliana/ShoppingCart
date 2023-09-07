@@ -55,3 +55,28 @@ a {
     margin: 10px;
     border: 1px solid var(--main-color);
   }
+
+
+  /* Cart */
+
+  .cartItem {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    margin: 0 1.25em;
+    margin-bottom: 1.25 em; 
+  }
+
+  .cartItemImg {
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+  }
+
+  .cartItemDetail {
+    display: flex;
+    flex: 1;
+    padding: 0 1.25rem;
+    flex-direction: column;
+  }

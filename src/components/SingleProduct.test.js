@@ -1,5 +1,4 @@
-import {screen, render, fireEvent} from "@testing-library/react"
-import user from "@testing-library/user-event"
+import {screen, render} from "@testing-library/react"
 import SingleProduct from "./SingleProduct"
 
 

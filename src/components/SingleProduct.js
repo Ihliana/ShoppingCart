@@ -1,14 +1,15 @@
 import React from 'react'
 import {Button, Card} from 'react-bootstrap'
 import Rating from './Rating'
+import {CartState} from '../context/Context'
 
 
 /**
  * A React component for displaying details of a single product
  * 
  * @component
- * @param {Object} props - The component's props
- * @param {Object} props.prod - The product object containing information to display
+ * 
+ * @param {Object} prod - The product object containing information to display
  * @param {string} prod.image - The url of the product's image
  * @param {string} prod.name - The name of the product 
  * @param {string} prod.price - The price of the product
@@ -20,6 +21,8 @@ import Rating from './Rating'
  */
 
 function SingleProduct({prod}) {
+  const {state: {cart}, dispatch }  = CartState()
+
   return (
     <div className='products'>
         <Card>
@@ -44,10 +47,14 @@ function SingleProduct({prod}) {
                  {/* Product Rating */}
                 <Rating rating={prod.ratings} />
               </Card.Subtitle>
+              {
+                cart.some(p => p.id === prod.id) ? (
+                  <Button onClick = {() => { dispatch({type: "REMOVE_FROM_CART", payload: prod})
+                }} variant='danger'>Remove from Cart</Button>
 
-                 {/* Buttons */}
-                <Button variant='danger'>Remove from Card</Button>
-                <Button disabled={!prod.inStock}>{!prod.inStock ? "Out of Stock" : "Add to Cart"}</Button>
+                ) : <Button onClick={() => {dispatch({type: "ADD_TO_CART", payload: prod})}} disabled={!prod.inStock}>{!prod.inStock ? "Out of Stock" : "Add to cart"}</Button>
+              }
+
 
             </Card.Body>
         </Card>
