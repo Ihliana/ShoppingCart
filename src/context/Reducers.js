@@ -61,7 +61,7 @@ export const productReducer = (state, action) => {
         case "FILTER_BY_DELIVERY":
             /**
              * Toggle the filter for items with fast delivery.
-             * It updates the 'byFastDelivery' property in the state to its oppostive value 
+             * It updates the 'byFastDelivery' property in the state to its opposite value 
              */
             return {...state, byFastDelivery: !state.byFastDelivery}
             

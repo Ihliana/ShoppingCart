@@ -17,7 +17,7 @@ import { AiFillDelete } from 'react-icons/ai';
 function Header() {
 
     //Retrieve cart state and dispatch function from the context
-    const {state: {cart}, dispatch} = CartState()
+    const {state: {cart}, dispatch, productDispatch} = CartState()
 
 
   return (
@@ -28,11 +28,16 @@ function Header() {
             </Navbar.Brand>
 
             <Navbar.Text className='search'>
-                <FormControl style={{width: 500}} className='-auto' placeholder="Search a product" />
+                <FormControl style={{width: 500}} 
+                                className='-auto' 
+                                placeholder="Search a product" 
+                                onChange = {(e) => {
+                                    productDispatch({type: "FILTER_BY_SEARCH", payload: e.target.value})
+                                }}/>
             </Navbar.Text>
 
             <Nav>
-                <Dropdown alignRight>
+                <Dropdown>
                     <Dropdown.Toggle variant='success' data-testid='cart-toggle'>
                         <FaShoppingCart color="white" fontSize="25px" className='shoppingCart' data-testid='cart-icon' />
                         <Badge>{cart.length}</Badge>
