@@ -1,5 +1,6 @@
 import {screen, render} from "@testing-library/react"
 import SingleProduct from "./SingleProduct"
+import { CartState } from "../context/Context"
 
 
 describe("SingleProduct test suite", ()=> {
