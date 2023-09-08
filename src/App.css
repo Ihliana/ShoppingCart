@@ -91,3 +91,33 @@ a {
   footer a {
     font-weight: 900;
   }
+
+
+  @media (max-width: 771px){
+    .filters {
+      width: 40%;
+      padding: 10px;
+      margin: 5px;
+    }
+
+    .filters > span {
+      font-size: 10px;
+    }
+
+    .title {
+      font-size: 1em;
+    }
+
+    .productContainer {
+      width: 58%;
+      padding: 0;
+    }
+
+    .search {
+      display: none !important;
+    }
+
+    .products {
+      width: 100%;
+    }
+  }

@@ -31,7 +31,7 @@ function SingleProduct({prod}) {
 
             <Card.Body>
               <Row>
-                <Col sm={6}>
+                <Col xs={12}  xl={6}>
                     {/* Product Name */}
                     <Card.Title>{prod.name}</Card.Title>
 
@@ -51,7 +51,7 @@ function SingleProduct({prod}) {
                     </Card.Subtitle>
                 </Col>
 
-                <Col sm={6} className="d-flex align-items-center justify-content-center">
+                <Col xs={12} xl={6} className="d-flex align-items-center justify-content-center">
                     {
                       cart.some(p => p.id === prod.id) ? (
                         <Button onClick = {() => { dispatch({type: "REMOVE_FROM_CART", payload: prod})
